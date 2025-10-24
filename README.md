@@ -18,44 +18,33 @@ This project provides a RESTful API for basic CRUD operations on a `users` colle
 - Postman (for API testing)
 
 ### Installation
-1. **Clone the repository**
-git clone https://github.com/lilsea7/CRUD-basic.git
-cd crud-basic/backendnpm install
+1. **Clone the repository** (or create manually):
+git clone <your-repo-url> crud-basic
+cd crud-basic/backend
+*Note*: If not using Git, manually create the `backend` folder and add files as described.
 
-2. **Install dependencies**:
+3. **Install dependencies**:
 npm install
-
-3. **Configure environment variables**:
+text3. **Configure environment variables**:
 - Create a `.env` file in the `backend` directory.
-- Add the following variables (replace `<your_password>` with your MongoDB Atlas password):
-mongodb+srv://txinh:27102003@cluster0.v6qh4yk.mongodb.net/?appName=Cluster0
+- Add the following variables:
+MONGO_URI=mongodb+srv://txinh:<your_password>@ac-cw8mpv6-shard-00-00.v6qh4yk.mongodb.net/crud-basic?appName=Cluster0
 PORT=5000
 - Ensure your IP is allowed in MongoDB Atlas Network Access (or use 0.0.0.0/0 for testing).
 
 4. **Run the application**:
 - Start the server in development mode:
 npm run dev
-- The server will run on `http://localhost:5000` and connect to MongoDB.
+text- The server will run on `http://localhost:5000` and connect to MongoDB.
 
 ## API Endpoints
 
 ### Base URL
 `http://localhost:5000/api/users`
 
-### Endpoints
-- **Create a User (POST)**
-- URL: `/api/users`
-- Method: `POST`
-- Headers: `Content-Type: application/json`
-- Body:
-```json
-{
- "name": "string",
- "email": "string",
- "age": number
-}
 
-Testing with Postman
+## Testing with Postman
+
 Install Postman: Download from https://www.postman.com/downloads/.
 Configure Collection:
 
@@ -66,12 +55,12 @@ javascriptpm.request.headers.add({ key: 'Content-Type', value: 'application/json
 Save the collection.
 
 
-Test Endpoints:
+**Test Endpoints:**
 
-POST: Send a request with body { "name": "John Doe", "email": "john@example.com", "age": 25 }.
-GET: Fetch all users or a specific user by ID.
-PUT: Update a user with new data.
-DELETE: Remove a user by ID.
+- POST: Send a request with body { "name": "txinh", "email": "txinh@gmail.com", "age": 22 }.
+- GET: Fetch all users or a specific user by ID.
+- PUT: Update a user with new data.
+- DELETE: Remove a user by ID.
 
 
 Verify: Check responses and MongoDB Atlas (crud-basic database, users collection).
